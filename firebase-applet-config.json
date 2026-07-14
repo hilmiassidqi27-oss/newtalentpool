@@ -1,10 +1,9 @@
-{
-  "projectId": "gen-lang-client-0458927511",
-  "appId": "1:788191046001:web:e068c1a00405710be8aed0",
-  "apiKey": "AIzaSyCWHdx_Y7fKMJ1_R-D1M_QQjmlUI47Pv_w",
-  "authDomain": "gen-lang-client-0458927511.firebaseapp.com",
-  "storageBucket": "gen-lang-client-0458927511.firebasestorage.app",
-  "messagingSenderId": "788191046001",
-  "measurementId": "",
-  "oAuthClientId": "788191046001-s62m4ijd4q5ms2f78b28tbpi6tgppulu.apps.googleusercontent.com"
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyBlwTx_l0mKaGtjpjHEbA87afPLjjK5LOw",
+  authDomain: "recruitpro-13c5c.firebaseapp.com",
+  projectId: "recruitpro-13c5c",
+  storageBucket: "recruitpro-13c5c.firebasestorage.app",
+  messagingSenderId: "935129032880",
+  appId: "1:935129032880:web:00d914a6b65f78e9d7f375",
+  measurementId: "G-C65D47ZZ19"
+};
