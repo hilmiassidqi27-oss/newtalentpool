@@ -1,0 +1,6 @@
+{
+  "name": "RecruitPro",
+  "description": "An elegant, high-density Recruitment Pipeline and Applicant Tracking System designed for professional HR operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
