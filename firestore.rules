@@ -1,9 +1,0 @@
-rules_version = '2';
-service cloudfirestore {
-  match /databases/{database}/documents {
-    // Candidates collection rules
-    match /candidates/{candidateDocId} {
-      allow read, write: if true;
-    }
-  }
-}
