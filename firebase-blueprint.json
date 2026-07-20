@@ -1,0 +1,62 @@
+{
+  "entities": {
+    "Candidate": {
+      "title": "Candidate",
+      "description": "Information about a recruitment candidate",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of the candidate"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Full name of the candidate"
+        },
+        "position": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Position applied for"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Ditolak", "User Interview", "HR Interview", "Medical Check", "Lolos", "Onboarding", "Pending"],
+          "description": "Current status of recruitment"
+        },
+        "hrResult": {
+          "type": "string",
+          "enum": ["Lolos", "Tidak Lolos", "Dijadwalkan", "No Show", "-"],
+          "description": "Outcome of HR Interview"
+        },
+        "userResult": {
+          "type": "string",
+          "enum": ["Lolos", "Tidak Lolos", "Dijadwalkan", "No Show", "-"],
+          "description": "Outcome of User Interview"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "Notes from interviewers"
+        },
+        "dateAdded": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the candidate was added"
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Source of application (e.g., LinkedIn, Jobstreet, Google Form, Others)"
+        }
+      },
+      "required": ["id", "name", "position", "status", "hrResult", "userResult", "notes", "dateAdded", "source"]
+    }
+  },
+  "firestore": {
+    "candidates": {
+      "schema": "Candidate",
+      "description": "The master collection of recruitment candidates synced across Google Sheets and the app."
+    }
+  }
+}
