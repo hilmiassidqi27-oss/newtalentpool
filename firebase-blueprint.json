@@ -1,0 +1,142 @@
+{
+  "entities": {
+    "Candidate": {
+      "title": "Candidate",
+      "description": "Information about a recruitment candidate",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of the candidate"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Full name of the candidate"
+        },
+        "position": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Position applied for"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Ditolak", "User Interview", "HR Interview", "Medical Check", "Lolos", "Onboarding", "Pending"],
+          "description": "Current status of recruitment"
+        },
+        "hrResult": {
+          "type": "string",
+          "enum": ["Lolos", "Tidak Lolos", "Dijadwalkan", "No Show", "-"],
+          "description": "Outcome of HR Interview"
+        },
+        "userResult": {
+          "type": "string",
+          "enum": ["Lolos", "Tidak Lolos", "Dijadwalkan", "No Show", "-"],
+          "description": "Outcome of User Interview"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "Notes from interviewers"
+        },
+        "dateAdded": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the candidate was added"
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Source of application (e.g., LinkedIn, Jobstreet, Google Form, Others)"
+        }
+      },
+      "required": ["id", "name", "position", "status", "hrResult", "userResult", "notes", "dateAdded", "source"]
+    },
+    "ConfigAllowedEmails": {
+      "title": "ConfigAllowedEmails",
+      "description": "Whitelisted Google emails for system login",
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "description": "List of allowed emails"
+        }
+      },
+      "required": ["list"]
+    },
+    "ConfigAuthorizedLogins": {
+      "title": "ConfigAuthorizedLogins",
+      "description": "List of custom team credentials",
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "description": "List of credential objects"
+        }
+      },
+      "required": ["list"]
+    },
+    "ConfigPositions": {
+      "title": "ConfigPositions",
+      "description": "List of custom job positions",
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "description": "List of positions"
+        }
+      },
+      "required": ["list"]
+    },
+    "ConfigJobs": {
+      "title": "ConfigJobs",
+      "description": "List of job openings",
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "description": "List of job objects"
+        }
+      },
+      "required": ["list"]
+    },
+    "ConfigRolePermissions": {
+      "title": "ConfigRolePermissions",
+      "description": "Role to module access permissions mapping",
+      "type": "object",
+      "properties": {
+        "mapping": {
+          "type": "object",
+          "description": "Role name key to module access boolean flags mapping"
+        }
+      },
+      "required": ["mapping"]
+    }
+  },
+  "firestore": {
+    "candidates": {
+      "schema": "Candidate",
+      "description": "The master collection of recruitment candidates synced across Google Sheets and the app."
+    },
+    "config/allowed_emails": {
+      "schema": "ConfigAllowedEmails",
+      "description": "Whitelisted Google emails for access control."
+    },
+    "config/authorized_logins": {
+      "schema": "ConfigAuthorizedLogins",
+      "description": "Custom team accounts and passwords."
+    },
+    "config/positions": {
+      "schema": "ConfigPositions",
+      "description": "Configured custom positions list."
+    },
+    "config/jobs": {
+      "schema": "ConfigJobs",
+      "description": "List of current job openings."
+    },
+    "config/role_permissions": {
+      "schema": "ConfigRolePermissions",
+      "description": "Configured roles module permission mapping."
+    }
+  }
+}

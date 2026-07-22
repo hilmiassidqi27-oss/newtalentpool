@@ -1,0 +1,12 @@
+{
+  "firestore": [
+    {
+      "database": "(default)",
+      "rules": "firestore.rules"
+    },
+    {
+      "database": "ai-studio-recruitpro-c4d93afe-2d2e-45b7-9fc6-cdab528080f7",
+      "rules": "firestore.rules"
+    }
+  ]
+}

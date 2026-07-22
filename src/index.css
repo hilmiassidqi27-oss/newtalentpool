@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00355f;
+  --color-background: #f8f9fa;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #42474f;
+  --color-table-border: #E0E0E0;
+  --color-table-header-bg: #F1F3F4;
+  --color-status-success: #2E7D32;
+  --color-status-error: #D32F2F;
+  --color-status-warning: #ED6C02;
+  --color-status-info: #0288D1;
+  --color-status-neutral: #757575;
+  --color-secondary-container: #cbe7f5;
+  --color-primary-container: #0f4c81;
+  --color-primary-fixed-dim: #a0c9ff;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-bright: #f8f9fa;
+  --color-outline-variant: #c2c7d1;
+  --color-outline: #727780;
+  --color-secondary: #48626e;
+
+  --font-sans: "Hanken Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Sans", "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+}
+
+/* Custom styles from mockup */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-lolos {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.status-tidak-lolos {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+}
+
+.status-dijadwalkan {
+  background-color: #FFF3E0;
+  color: #ED6C02;
+}
+
+.status-pending {
+  background-color: #F5F5F5;
+  color: #757575;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2c7d1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #727780;
+}
